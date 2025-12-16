@@ -16,12 +16,14 @@ export const MovieCard = ({ id, title, image }) => {
 
 const CardWrapper = styled.div`
   background-color: #1e1e1e;
-  border-radius: 8px;
+  border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s;
-  width: 200px;
+  width: 350px;
+  height: 500px;
   margin: 10px;
+  position: relative;
 
   &:hover {
     transform: translateY(-5px)
@@ -29,15 +31,39 @@ const CardWrapper = styled.div`
 
   img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     display: block;
+    transition: filter 0.3s;
   }
-   
+
+  &:hover img {
+    filter: brightness(30%);
+  }
+
   h3 {
   color: #fff;
-  font-size: 16px;
+  font-size: 40px;
   text-align: center;
-  padding: 10px 0;
+  justify-content: center;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.2s;
+  }
+
+  &:hover h3 {
+    opacity: 1;
+  }
+
+  @media (max-width: 400px) {
+    width: 70vw;
+    height: 85vw;
+  }
+
+    &:hover h3 {
+    opacity: 1;
   }
   `;  

@@ -55,8 +55,16 @@ export const MovieList = () => {
 
 const GridContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 10px;
+  grid-template-columns: repeat(1, 1fr); /* 2 columns on mobile */
+  grid-gap: 15px;
   padding: 10px;
   justify-items: center;
+
+  @media(min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr); /* 3 columns on tablet */
+  }
+
+  @media(min-width: 1280px) {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+  }
   `;
