@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -7,7 +7,7 @@ export const MovieCard = ({ id, title, image }) => {
   return (
     <CardWrapper>
       <Link to={`/movies/${id}`}>
-        <img src="{image}" alt="{title}" />
+        <img src={image} alt={title} />
         <h3>{title}</h3>
       </Link>
     </CardWrapper>
@@ -30,6 +30,7 @@ const CardWrapper = styled.div`
   img {
     width: 100%;
     height: auto;
+    object-fit: cover;
     display: block;
   }
    
@@ -38,4 +39,5 @@ const CardWrapper = styled.div`
   font-size: 16px;
   text-align: center;
   padding: 10px 0;
+  }
   `;  
